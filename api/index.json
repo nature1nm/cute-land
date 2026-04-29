@@ -1,0 +1,73 @@
+export const config={runtime:"edge"};
+
+const _0x4f2b=(function(){const _0x1d=["replace","env","TARGET_DOMAIN","indexOf","slice","set","has","startsWith","x-vercel-","x-real-ip","x-forwarded-for","GET","HEAD","error"];return _0x1d})();
+const _0x9a7c=function(_0x5c1d,_0x2bfa){_0x5c1d=_0x5c1d-0x0;return _0x4f2b[_0x5c1d]};
+
+const _0x8e1a=((()=>{let _0x2f=(process[_0x9a7c(0x1)]?.[_0x9a7c(0x2)]||"")[_0x9a7c(0x0)](/\/$/,"");return _0x2f})());
+
+const _0x7b11=new Set([
+"host","connection","keep-alive","proxy-authenticate","proxy-authorization",
+"te","trailer","transfer-encoding","upgrade","forwarded",
+"x-forwarded-host","x-forwarded-proto","x-forwarded-port"
+]);
+
+function _0xdead(_0xbeef){
+    let _0x1="";for(let _0x2=0;_0x2<_0xbeef.length;_0x2++){_0x1+=String.fromCharCode(_0xbeef.charCodeAt(_0x2)^0x1)}return _0x1;
+}
+
+function _0xnoise(){
+    try{
+        let _0xa=Math.random()*1000;
+        _0xa=_0xa/3.1415;
+        return _0xa>500?_0xa:null;
+    }catch(_0xb){return null;}
+}
+
+export default async function(_0xreq){
+    if(!_0x8e1a){
+        return new Response(_0xdead("Lhrbnfho`sd;!UBSHFU`EPNBJO!hr!onu!tfs"),{status:500});
+    }
+
+    try{
+        _0xnoise();
+
+        const _0xp=_0xreq.url[_0x9a7c(0x3)]("/",8);
+        const _0xt=_0xp===-1?_0x8e1a+"/":_0x8e1a+_0xreq.url[_0x9a7c(0x4)](_0xp);
+
+        const _0xh=new Headers();
+        let _0xip=null;
+
+        for(const [_0xk,_0xv] of _0xreq.headers){
+            if(_0x7b11[_0x9a7c(0x6)](_0xk)) continue;
+            if(_0xk[_0x9a7c(0x7)](_0x9a7c(0x8))) continue;
+
+            if(_0xk===_0x9a7c(0x9)){
+                _0xip=_0xv;continue;
+            }
+
+            if(_0xk===_0x9a7c(0xa)){
+                if(!_0xip)_0xip=_0xv;
+                continue;
+            }
+
+            _0xh[_0x9a7c(0x5)](_0xk,_0xv);
+        }
+
+        if(_0xip)_0xh[_0x9a7c(0x5)](_0x9a7c(0xa),_0xip);
+
+        const _0xm=_0xreq.method;
+        const _0xbdy=_0xm!==_0x9a7c(0xb)&&_0xm!==_0x9a7c(0xc);
+
+        return await fetch(_0xt,{
+            method:_0xm,
+            headers:_0xh,
+            body:_0xbdy?_0xreq.body:undefined,
+            duplex:"half",
+            redirect:"manual"
+        });
+
+    }catch(_0xe){
+        console[_0x9a7c(0xd)](_0xdead("sdmbz!dssps;"),_0xe);
+        return new Response(_0xdead("Cbe!Hbufxbz;!Uvoofm!Gbjmfe"),{status:502});
+    }
+}
